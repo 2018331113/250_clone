@@ -1,3 +1,4 @@
+import 'package:appointment_scheduler/screens/teacher_list.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/initScreens/signIn.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SignIn(),
+      home: TeacherList(),
     );
   }
 }
