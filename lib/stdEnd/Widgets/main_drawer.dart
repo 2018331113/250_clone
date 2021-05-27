@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -18,16 +20,61 @@ class MainDrawer extends StatelessWidget {
       //backgroundcolor: Colors.white,
       child: Column(
         children: [
-          Container(
-            height: 70,
-            width: double.infinity,
-            padding: EdgeInsets.only(top: 35, left: 20),
-            alignment: Alignment.centerLeft,
-            margin: EdgeInsets.symmetric(vertical: 20),
-            child: Text(
-              'Appointment Scheduler',
-              style: TextStyle(color: Colors.black, fontSize: 23),
+          SizedBox(
+            height: 55,
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(left: 25),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border.all(width: 4, color: Colors.white),
+                boxShadow: [
+                  BoxShadow(
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    color: Colors.black.withOpacity(0.1),
+                  ),
+                ],
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                      "https://images.unsplash.com/photo-1547721064-da6cfb341d50"),
+                ),
+              ),
             ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          //alignment: AlignmentDirectional.topStart,
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(left: 25),
+              child: Text(
+                "USER NAME",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                // textAlign: TextAlign.left,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(left: 25),
+              child: Text(
+                'user@gmail.com',
+                style: TextStyle(color: Colors.grey[700]),
+              ),
+            ),
+          ),
+
+          SizedBox(
+            height: 40,
           ),
           const Divider(
             height: 1,
@@ -38,15 +85,27 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          buildListTile(
-            'Calendar',
-            Icons.calendar_view_day,
-          ),
+
+          // buildListTile(
+          //'Upcoming Appointments',
+          // Icons.toc,
+          //),
           buildListTile(
             'Notifications',
             Icons.notifications,
           ),
-          buildListTile('Upcoming Appointments', Icons.toc),
+          buildListTile(
+            'Inbox',
+            Icons.email,
+          ),
+          buildListTile(
+            'Calendar',
+            Icons.calendar_today,
+          ),
+          buildListTile(
+            'Settings',
+            Icons.settings,
+          ),
         ],
       ),
     );

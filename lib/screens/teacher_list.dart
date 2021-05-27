@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../stdEnd/Widgets/main_drawer.dart';
+import '../stdEnd/widgets/main_drawer.dart';
 import '../dummy_data.dart';
-import '../stdEnd/Widgets/teachers.dart';
+import '../stdEnd/widgets/teachers.dart';
 
 class TeacherList extends StatefulWidget {
   @override
