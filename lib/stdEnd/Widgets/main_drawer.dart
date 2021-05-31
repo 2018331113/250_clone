@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -105,6 +103,10 @@ class MainDrawer extends StatelessWidget {
           buildListTile(
             'Settings',
             Icons.settings,
+          ),
+          buildListTile(
+            'LogOut',
+            Icons.logout,
           ),
         ],
       ),
