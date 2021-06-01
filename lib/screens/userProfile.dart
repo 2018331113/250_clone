@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../stdEnd/widgets/topBar.dart';
+import '../widgets/topBar.dart';
 
 class UserProfile extends StatelessWidget {
   Widget buildCard(String title, IconData icon, String subtitle) {
@@ -18,8 +18,8 @@ class UserProfile extends StatelessWidget {
           subtitle,
           style: TextStyle(
             fontSize: 17,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+            //fontWeight: FontWeight.bold,
+            color: Colors.black87,
           ),
         ),
         onTap: () {},
@@ -147,7 +147,8 @@ class MyClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = new Path();
     path.lineTo(0, size.height - 80);
-    var controllPoint = Offset(15, size.height - 50);
+
+    var controllPoint = Offset(0, size.height - 50);
     var endPoint = Offset(size.width / 6, size.height);
     path.quadraticBezierTo(
       controllPoint.dx,

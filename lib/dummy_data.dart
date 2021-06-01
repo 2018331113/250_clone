@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'stdEnd/models/added_teacher.dart';
+import 'models/added_teacher.dart';
 
 const DUMMY_DATA = const [
   AddedTeacher(

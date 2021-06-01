@@ -1,3 +1,4 @@
+import 'package:appointment_scheduler/screens/initScreens/signIn.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
@@ -136,24 +137,32 @@ class SignUp extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 95),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                          text: "Already have an account? ",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            //fontWeight: FontWeight.bold,
-                          )),
-                      TextSpan(
-                          text: "Sign In",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          )),
-                    ],
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                            text: "Already have an account? ",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              //fontWeight: FontWeight.bold,
+                            )),
+                        TextSpan(
+                            text: "Sign In",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            )),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -185,7 +194,7 @@ Widget _ttextInput({controller, hint}) {
         decoration: InputDecoration(
           //border: InputBorder.none,
           labelText: hint,
-          labelStyle: TextStyle(color: Colors.black),
+          labelStyle: TextStyle(color: Colors.grey),
           //hintStyle: TextStyle(color: Colors.grey),
           border: InputBorder.none,
           contentPadding: EdgeInsets.only(left: 10),
@@ -214,7 +223,7 @@ Widget _textInput({controller, hint}) {
           border: InputBorder.none,
           contentPadding: EdgeInsets.only(left: 10),
           labelText: hint,
-          labelStyle: TextStyle(color: Colors.black),
+          labelStyle: TextStyle(color: Colors.grey),
           suffixIcon: IconButton(
             icon: Icon(Icons.remove_red_eye),
             onPressed: () {},

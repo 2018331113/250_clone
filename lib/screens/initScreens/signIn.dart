@@ -1,3 +1,6 @@
+import 'package:appointment_scheduler/screens/appointment.dart';
+
+import './signUp.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -112,13 +115,22 @@ class SignIn extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(5)),
                               ),
                               // padding: const EdgeInsets.all(0),
-                              child: Text(
-                                "LOGIN",
-                                // style: TextStyle(color: Colors.white),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Appointment()),
+                                  );
+                                },
+                                child: Text(
+                                  "LOGIN",
+                                  // style: TextStyle(color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
                               ),
                             ),
                           ),
@@ -130,24 +142,33 @@ class SignIn extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 95),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUp()),
+                    );
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
                           text: "Don't have an account? ",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
                             //fontWeight: FontWeight.bold,
-                          )),
-                      TextSpan(
-                          text: "Sign Up",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          )),
-                    ],
+                          ),
+                        ),
+                        TextSpan(
+                            text: "Sign Up",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            )),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -181,7 +202,7 @@ Widget _textInput({controller, hint}) {
           border: InputBorder.none,
           contentPadding: EdgeInsets.only(left: 10),
           labelText: hint,
-          labelStyle: TextStyle(color: Colors.black),
+          labelStyle: TextStyle(color: Colors.grey),
           suffixIcon: IconButton(
             icon: Icon(Icons.remove_red_eye),
             onPressed: () {},
@@ -212,7 +233,7 @@ Widget _ttextInput({controller, hint}) {
           border: InputBorder.none,
           contentPadding: EdgeInsets.only(left: 10),
           labelText: hint,
-          labelStyle: TextStyle(color: Colors.black),
+          labelStyle: TextStyle(color: Colors.grey),
 
           //hintStyle: TextStyle(color: Colors.grey),
         ),

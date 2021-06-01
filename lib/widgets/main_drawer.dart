@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/settings.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon) {
@@ -100,9 +101,18 @@ class MainDrawer extends StatelessWidget {
             'Calendar',
             Icons.calendar_today,
           ),
-          buildListTile(
-            'Settings',
-            Icons.settings,
+          ListTile(
+            leading: Icon(
+              Icons.settings,
+              size: 20,
+            ),
+            title: Text('Settings'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Settings()),
+              );
+            },
           ),
           buildListTile(
             'LogOut',
