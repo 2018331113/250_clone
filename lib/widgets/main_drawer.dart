@@ -1,3 +1,4 @@
+import 'package:appointment_scheduler/screens/userProfile.dart';
 import 'package:flutter/material.dart';
 import '../screens/settings.dart';
 
@@ -89,6 +90,19 @@ class MainDrawer extends StatelessWidget {
           //'Upcoming Appointments',
           // Icons.toc,
           //),
+          ListTile(
+            leading: Icon(
+              Icons.person,
+              size: 20,
+            ),
+            title: Text('Profile'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UserProfile()),
+              );
+            },
+          ),
           buildListTile(
             'Notifications',
             Icons.notifications,

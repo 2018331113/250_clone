@@ -14,7 +14,7 @@ class Appointment extends StatefulWidget {
 class _AppointmentState extends State<Appointment> {
   Route _createRoute() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => AcceptedAppt(),
+      pageBuilder: (context, animation, secondaryAnimation) => Accepted(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         var begin = Offset(0.0, 1.0);
         var end = Offset.zero;
@@ -338,16 +338,6 @@ class _AppointmentState extends State<Appointment> {
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
         actions: [
-          IconButton(
-            icon: Icon(Icons.account_circle_rounded),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => UserProfile()),
-              );
-            },
-            color: Colors.black,
-          ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {

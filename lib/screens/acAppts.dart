@@ -1,20 +1,37 @@
 import 'package:flutter/material.dart';
 
-class AcceptedAppt extends StatelessWidget {
+class Accepted extends StatelessWidget {
+  Widget buildList() {
+    return Container(
+      width: double.infinity,
+      height: 200,
+      child: Row(
+        children: [
+          Card(
+            color: Colors.lightGreenAccent,
+            child: Text('Date'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Appointment Scheduler',
-          textAlign: TextAlign.left,
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+        title: Text(
+          'Scheduled Appointment',
+          style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: Center(
-        child: Text('Appointment List'),
+      body: Column(
+        children: [
+          buildList(),
+        ],
       ),
     );
   }
