@@ -1,10 +1,12 @@
+import 'package:appointment_scheduler/screens/missed.dart';
+import 'package:appointment_scheduler/screens/requested.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
 import 'package:intl/intl.dart';
 import '../widgets/main_drawer.dart';
 import '../screens/userProfile.dart';
 import '../screens/settings.dart';
-import 'acAppts.dart';
+import 'accepted.dart';
 
 class Appointment extends StatefulWidget {
   @override
@@ -363,7 +365,10 @@ class _AppointmentState extends State<Appointment> {
             child: InkWell(
               splashColor: Colors.grey[700],
               onTap: () {
-                Navigator.of(context).push(_createRoute());
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Accepted()),
+                );
               },
               child: Card(
                 elevation: 5,
@@ -408,7 +413,10 @@ class _AppointmentState extends State<Appointment> {
             child: InkWell(
               splashColor: Colors.grey[700],
               onTap: () {
-                Navigator.of(context).push(_createRoute());
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Requested()),
+                );
               },
               child: Card(
                 elevation: 5,
@@ -472,7 +480,10 @@ class _AppointmentState extends State<Appointment> {
             child: InkWell(
               splashColor: Colors.grey[700],
               onTap: () {
-                Navigator.of(context).push(_createRoute());
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Missed()),
+                );
               },
               child: Card(
                 elevation: 5,
