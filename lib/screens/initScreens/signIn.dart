@@ -1,7 +1,8 @@
-import 'package:appointment_scheduler/screens/appointment.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import '../appointment.dart';
 
 import './signUp.dart';
-import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -142,33 +143,33 @@ class SignIn extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 95),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignUp()),
-                    );
-                  },
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "Don't have an account? ",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            //fontWeight: FontWeight.bold,
-                          ),
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Don't have an account? ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          //fontWeight: FontWeight.bold,
                         ),
-                        TextSpan(
-                            text: "Sign Up",
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            )),
-                      ],
-                    ),
+                      ),
+                      TextSpan(
+                        text: "Sign Up",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignUp()),
+                            );
+                          },
+                      ),
+                    ],
                   ),
                 ),
               ),
