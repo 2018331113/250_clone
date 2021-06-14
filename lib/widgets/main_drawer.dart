@@ -1,5 +1,5 @@
-import 'package:appointment_scheduler/screens/userProfile.dart';
 import 'package:flutter/material.dart';
+import 'package:appointment_scheduler/screens/userProfile.dart';
 import '../screens/settings.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -17,7 +17,6 @@ class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      //backgroundcolor: Colors.white,
       child: Column(
         children: [
           SizedBox(
@@ -50,7 +49,6 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          //alignment: AlignmentDirectional.topStart,
           Align(
             alignment: Alignment.topLeft,
             child: Container(
@@ -58,7 +56,6 @@ class MainDrawer extends StatelessWidget {
               child: Text(
                 "USER NAME",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                // textAlign: TextAlign.left,
               ),
             ),
           ),
@@ -72,7 +69,6 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
-
           SizedBox(
             height: 40,
           ),
@@ -85,11 +81,6 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-
-          // buildListTile(
-          //'Upcoming Appointments',
-          // Icons.toc,
-          //),
           ListTile(
             leading: Icon(
               Icons.person,
@@ -102,10 +93,6 @@ class MainDrawer extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => UserProfile()),
               );
             },
-          ),
-          buildListTile(
-            'Notifications',
-            Icons.notifications,
           ),
           buildListTile(
             'Inbox',
