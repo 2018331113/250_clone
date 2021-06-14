@@ -35,7 +35,6 @@ class Settings extends StatelessWidget {
           children: [
             buildList('Edit Profile', Icons.person),
             buildList('Change Password', Icons.lock),
-            buildList('Notifications', Icons.notifications),
             ListTile(
               leading: Icon(
                 Icons.palette,
@@ -58,7 +57,6 @@ class Settings extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
               onTap: () {},
-              //trailing: Switch(value: false, onChanged: null),
             ),
           ],
         ),

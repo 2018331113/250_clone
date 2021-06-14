@@ -1,7 +1,6 @@
-import 'package:appointment_scheduler/screens/appointment.dart';
+import './screens/appointment.dart';
 
-import 'package:appointment_scheduler/screens/teacher_list.dart';
-import 'package:appointment_scheduler/screens/userProfile.dart';
+import './screens/userProfile.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/initScreens/signIn.dart';

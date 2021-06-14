@@ -1,33 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:appointment_scheduler/widgets/profileCard.dart';
 import '../widgets/topBar.dart';
 
 class UserProfile extends StatelessWidget {
-  Widget buildCard(String title, IconData icon, String subtitle) {
-    return Card(
-      elevation: 2,
-      child: ListTile(
-        leading: Icon(
-          icon,
-          size: 19,
-        ),
-        title: Text(
-          title,
-          style: TextStyle(fontSize: 13, color: Colors.grey[600]),
-        ),
-        subtitle: Text(
-          subtitle,
-          style: TextStyle(
-            fontSize: 17,
-            //fontWeight: FontWeight.bold,
-            color: Colors.black87,
-          ),
-        ),
-        onTap: () {},
-        //trailing: Icon(Icons.edit),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -38,10 +13,7 @@ class UserProfile extends StatelessWidget {
             height: size.height / 3,
             width: double.infinity,
             child: Stack(
-              //alignment: Alignment.centerRight,
               children: [
-                //TopBar(),
-
                 ClipPath(
                   clipper: MyClipper(),
                   child: Container(
@@ -61,8 +33,6 @@ class UserProfile extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Container(
-                      //alignment: Alignment.centerRight,
-                      //padding: EdgeInsets.only(top: 50, right: 70),
                       height: size.height / 2,
                       width: size.width / 2,
                       decoration: BoxDecoration(
@@ -128,11 +98,11 @@ class UserProfile extends StatelessWidget {
           Container(
             child: Column(
               children: [
-                buildCard('Full Name', Icons.person, 'User Name'),
-                buildCard('Department', Icons.school,
+                BuildCard('Full Name', Icons.person, 'User Name'),
+                BuildCard('Department', Icons.school,
                     'Computer Science & Engineering'),
-                buildCard('Session', Icons.calendar_view_day, '2018-19'),
-                buildCard('Registration', Icons.circle, '20183310**'),
+                BuildCard('Session', Icons.calendar_view_day, '2018-19'),
+                BuildCard('Registration', Icons.circle, '20183310**'),
               ],
             ),
           ),
